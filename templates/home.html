@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная - Платформа для поиска мастеров{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Найдите лучших мастеров для ваших задач</h1>
+    <p class="lead">Платформа для связи заказчиков с профессиональными исполнителями</p>
+    <hr class="my-4">
+    <p>Создавайте заказы, находите исполнителей, оценивайте качество работы</p>
+    {% if not user.is_authenticated %}
+    <a class="btn btn-primary btn-lg" href="{% url 'accounts:register' %}" role="button">
+        <i class="fas fa-user-plus"></i> Зарегистрироваться
+    </a>
+    <a class="btn btn-outline-primary btn-lg" href="{% url 'accounts:login' %}" role="button">
+        <i class="fas fa-sign-in-alt"></i> Войти
+    </a>
+    {% else %}
+    <a class="btn btn-primary btn-lg" href="{% url 'orders:order_list' %}" role="button">
+        <i class="fas fa-search"></i> Найти заказы
+    </a>
+    {% if user.user_type == 'customer' %}
+    <a class="btn btn-success btn-lg" href="{% url 'orders:order_create' %}" role="button">
+        <i class="fas fa-plus"></i> Создать заказ
+    </a>
+    {% endif %}
+    {% endif %}
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="mb-4">Категории услуг</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Ремонт</h5>
+                <p class="card-text">Ремонт квартир, домов, техники</p>
+                <a href="{% url 'orders:order_list' %}?category=repair" class="btn btn-outline-primary">Смотреть заказы</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-graduation-cap fa-3x text-success mb-3"></i>
+                <h5 class="card-title">Обучение</h5>
+                <p class="card-text">Репетиторы, курсы, тренинги</p>
+                <a href="{% url 'orders:order_list' %}?category=education" class="btn btn-outline-success">Смотреть заказы</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-cut fa-3x text-danger mb-3"></i>
+                <h5 class="card-title">Красота</h5>
+                <p class="card-text">Парикмахеры, визажисты, мастера маникюра</p>
+                <a href="{% url 'orders:order_list' %}?category=beauty" class="btn btn-outline-danger">Смотреть заказы</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-heartbeat fa-3x text-info mb-3"></i>
+                <h5 class="card-title">Здоровье</h5>
+                <p class="card-text">Массажисты, тренеры, диетологи</p>
+                <a href="{% url 'orders:order_list' %}?category=health" class="btn btn-outline-info">Смотреть заказы</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-laptop-code fa-3x text-warning mb-3"></i>
+                <h5 class="card-title">IT-услуги</h5>
+                <p class="card-text">Программисты, дизайнеры, администраторы</p>
+                <a href="{% url 'orders:order_list' %}?category=it" class="btn btn-outline-warning">Смотреть заказы</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-truck fa-3x text-secondary mb-3"></i>
+                <h5 class="card-title">Доставка</h5>
+                <p class="card-text">Курьеры, грузоперевозки</p>
+                <a href="{% url 'orders:order_list' %}?category=delivery" class="btn btn-outline-secondary">Смотреть заказы</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h2 class="mb-4">Как это работает</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 text-center mb-4">
+        <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+            <h2 class="mb-0">1</h2>
+        </div>
+        <h4 class="mt-3">Создайте заказ</h4>
+        <p>Опишите задачу и укажите бюджет</p>
+    </div>
+    
+    <div class="col-md-4 text-center mb-4">
+        <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+            <h2 class="mb-0">2</h2>
+        </div>
+        <h4 class="mt-3">Получите отклики</h4>
+        <p>Исполнители предложат свои услуги</p>
+    </div>
+    
+    <div class="col-md-4 text-center mb-4">
+        <div class="rounded-circle bg-info text-white d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+            <h2 class="mb-0">3</h2>
+        </div>
+        <h4 class="mt-3">Выберите мастера</h4>
+        <p>Оцените работу и оставьте отзыв</p>
+    </div>
+</div>
+{% endblock %}

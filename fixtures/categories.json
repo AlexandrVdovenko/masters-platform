@@ -1,0 +1,56 @@
+[
+  {
+    "model": "orders.category",
+    "pk": 1,
+    "fields": {
+      "name": "Ремонт",
+      "slug": "repair",
+      "description": "Ремонт квартир, домов, бытовой техники"
+    }
+  },
+  {
+    "model": "orders.category",
+    "pk": 2,
+    "fields": {
+      "name": "Обучение",
+      "slug": "education",
+      "description": "Репетиторы, курсы, тренинги"
+    }
+  },
+  {
+    "model": "orders.category",
+    "pk": 3,
+    "fields": {
+      "name": "Красота",
+      "slug": "beauty",
+      "description": "Парикмахеры, визажисты, мастера маникюра"
+    }
+  },
+  {
+    "model": "orders.category",
+    "pk": 4,
+    "fields": {
+      "name": "Здоровье",
+      "slug": "health",
+      "description": "Массажисты, тренеры, диетологи"
+    }
+  },
+  {
+    "model": "orders.category",
+    "pk": 5,
+    "fields": {
+      "name": "IT-услуги",
+      "slug": "it",
+      "description": "Программисты, дизайнеры, системные администраторы"
+    }
+  },
+  {
+    "model": "orders.category",
+    "pk": 6,
+    "fields": {
+      "name": "Доставка",
+      "slug": "delivery",
+      "description": "Курьеры, грузоперевозки"
+    }
+  }
+]
