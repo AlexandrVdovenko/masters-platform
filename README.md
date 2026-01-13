@@ -64,7 +64,7 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/yourusername/masters-platform.git
+git clone https://github.com/AlexandrVdovenko/masters-platform.git
 cd masters-platform
 ```
 
