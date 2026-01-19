@@ -110,60 +110,6 @@ python manage.py runserver
 
 9. Откройте браузер и перейдите по адресу: http://127.0.0.1:8000/
 
-## Структура проекта
-
-```
-masters-platform/
-├── masters_platform/          # Основной проект Django
-│   ├── settings.py           # Настройки проекта
-│   ├── urls.py              # Главные URL маршруты
-│   └── wsgi.py              # WSGI конфигурация
-├── accounts/                 # Приложение пользователей
-│   ├── models.py            # Модели User, Profile, ExecutorProfile
-│   ├── views.py             # Представления для аутентификации
-│   ├── forms.py             # Формы регистрации и профиля
-│   └── tests/               # Тесты
-├── orders/                   # Приложение заказов
-│   ├── models.py            # Модели Order, Response, Category
-│   ├── views.py             # Представления для заказов
-│   ├── forms.py             # Формы заказов
-│   └── tests/               # Тесты
-├── portfolio/                # Приложение портфолио
-│   ├── models.py            # Модели PortfolioItem, PortfolioImage
-│   ├── views.py             # Представления портфолио
-│   └── tests/               # Тесты
-├── reviews/                  # Приложение отзывов
-│   ├── models.py            # Модель Review
-│   ├── views.py             # Представления отзывов
-│   └── tests/               # Тесты
-├── notifications/            # Приложение уведомлений
-│   ├── models.py            # Модель Notification
-│   ├── views.py             # Представления уведомлений
-│   └── tests/               # Тесты
-├── core/                     # Общие утилиты
-│   ├── utils.py             # Вспомогательные функции
-│   └── mixins.py            # Общие миксины
-├── templates/                # HTML шаблоны
-│   ├── base.html            # Базовый шаблон
-│   ├── home.html            # Главная страница
-│   ├── accounts/            # Шаблоны аутентификации
-│   ├── orders/              # Шаблоны заказов
-│   ├── portfolio/           # Шаблоны портфолио
-│   └── reviews/             # Шаблоны отзывов
-├── static/                   # Статические файлы
-│   ├── css/                 # CSS стили
-│   ├── js/                  # JavaScript файлы
-│   └── images/              # Изображения
-├── media/                    # Загруженные файлы
-│   ├── avatars/             # Аватары пользователей
-│   └── portfolio/           # Изображения портфолио
-├── fixtures/                 # Начальные данные
-│   └── categories.json      # Категории услуг
-├── requirements.txt          # Зависимости Python
-├── pytest.ini               # Конфигурация pytest
-├── .gitignore               # Git исключения
-└── README.md                # Этот файл
-```
 
 ## Тестирование
 
@@ -288,7 +234,7 @@ gunicorn masters_platform.wsgi:application --bind 0.0.0.0:8000
 
 ## Автор
 
-**Студент**: Вдовенко Александр  
+**Студент**: Вдовенко Александр Сергеевич
 **Группа**: ПрИЗ-401  
 **Курсовая работа по**: Программная инженерия   
 
@@ -301,11 +247,5 @@ gunicorn masters_platform.wsgi:application --bind 0.0.0.0:8000
 - **EARS формат** - структурированное описание требований
 - **MVT архитектура** - паттерн Model-View-Template
 
-## Документы курсовой работы
-
-- **COURSEWORK_INFO.md** - Информация о курсовой работе
-- **TECHNICAL_REPORT.md** - Технический отчет
-- **INSTRUCTOR_GUIDE.md** - Руководство для преподавателя
-- **PROJECT_SUMMARY.md** - Сводка проекта
 
 
